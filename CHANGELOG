@@ -1,0 +1,7 @@
+* Thu Nov 03 2016 Nick Miller <nick.miller@onyxpoint.com> - 0.2.2-0
+- SIMPed module
+- Wrote more spec tests
+- Added a few config options to the defaults
+- Added details to metadata.json
+- Added CentOS as a supported OS
+- Fixed lint errors
