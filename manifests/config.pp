@@ -1,3 +1,4 @@
+# Configure journald.conf
 class journald::config {
   $merged_options = merge($::journald::params::default_options, $::journald::options)
 

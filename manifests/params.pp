@@ -1,3 +1,4 @@
+# Default parameters
 class journald::params {
   $persist_log = true
   $default_options = {
@@ -10,12 +11,14 @@ class journald::params {
     'RateLimitBurst'    => '10000',
     'MaxFileSec'        => '1month',
     'ForwardToSyslog'   => 'yes',
-    'ForwardToKMsg'     => 'yes',
+    'ForwardToKMsg'     => 'no',
     'ForwardToConsole'  => 'no',
+    'ForwardToWall'     => 'yes',
     'TTYPath'           => '/dev/console',
     'MaxLevelStore'     => 'debug',
     'MaxLevelSyslog'    => 'debug',
-    'MaxLevelKMsg'      => 'notice',
+    'MaxLevelKMsg'      => 'err',
     'MaxLevelConsole'   => 'info',
+    'MaxLevelWall'      => 'emerg',
   }
 }

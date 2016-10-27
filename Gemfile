@@ -1,22 +1,39 @@
-source ENV['GEM_SOURCE'] || "https://rubygems.org"
+# ------------------------------------------------------------------------------
+# NOTE: SIMP Puppet rake tasks support ruby 2.0 and ruby 2.1
+# ------------------------------------------------------------------------------
+gem_sources   = ENV.key?('SIMP_GEM_SERVERS') ? ENV['SIMP_GEM_SERVERS'].split(/[, ]+/) : ['https://rubygems.org']
 
-gem 'puppet', ENV.key?('PUPPET_VERSION') ? "~> #{ENV['PUPPET_VERSION']}" : "~> 3.0"
-gem 'rake', '~> 10'
-gem 'rspec-puppet', '~> 2.0'
-gem 'puppetlabs_spec_helper', '>= 0.8.0'
-gem 'puppet-lint', '>= 1'
-gem 'puppet-lint-unquoted_string-check'
-gem 'puppet-lint-empty_string-check'
-gem 'puppet-lint-spaceship_operator_without_tag-check'
-gem 'puppet-lint-absolute_classname-check'
-gem 'puppet-lint-undef_in_function-check'
-gem 'puppet-lint-leading_zero-check'
-gem 'puppet-lint-trailing_comma-check'
-gem 'puppet-lint-file_ensure-check'
-gem 'puppet-lint-variable_contains_upcase'
-gem 'simplecov'
-gem 'rspec-puppet-facts'
-gem 'metadata-json-lint'
-gem 'rspec', '< 3.2.0', {"platforms"=>["ruby_18"]}
-gem 'json', '< 2.0', {"platforms"=>["ruby_18"]}
-gem 'json_pure', '< 2.0', {"platforms"=>["ruby_18"]}
+gem_sources.each { |gem_source| source gem_source }
+
+group :test do
+  gem "rake"
+  gem 'puppet', ENV.fetch('PUPPET_VERSION',  '~>4')
+  gem "rspec", '< 3.2.0'
+  gem "rspec-puppet"
+  gem "hiera-puppet-helper"
+  gem "puppetlabs_spec_helper"
+  gem "metadata-json-lint"
+  gem "simp-rspec-puppet-facts", ENV.fetch('SIMP_RSPEC_PUPPET_FACTS_VERSION', '~> 1.3')
+  gem 'simp-rake-helpers', ENV.fetch('SIMP_RAKE_HELPERS_VERSION', '~> 3')
+end
+
+group :development do
+  gem "travis"
+  gem "travis-lint"
+  gem "travish"
+  gem "puppet-blacksmith"
+  gem "guard-rake"
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'puppet-strings'
+
+  # `listen` is a dependency of `guard`
+  # from `listen` 3.1+, `ruby_dep` requires Ruby version >= 2.2.3, ~> 2.2
+  gem 'listen', '~> 3.0.6'
+end
+
+group :system_tests do
+  gem 'beaker', :git => 'https://github.com/trevor-vaughan/beaker', :ref => 'BKR-931-2.51.0'
+  gem 'beaker-rspec'
+  gem 'simp-beaker-helpers', ENV.fetch('SIMP_BEAKER_HELPERS_VERSION', '~> 1.5')
+end
