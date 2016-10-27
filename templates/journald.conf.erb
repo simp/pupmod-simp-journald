@@ -3,7 +3,7 @@
 
 [Journal]
 <%- scope.lookupvar('journald::config::merged_options').sort.each do |k, v| -%>
-<%- if v != :undef -%>
-<%= k %>=<%= v %>
-<%- end -%>
+<%-   if v != :undef -%>
+<%=     k %>=<%= v %>
+<%-   end -%>
 <%- end -%>
