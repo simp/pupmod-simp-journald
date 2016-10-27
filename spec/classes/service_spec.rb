@@ -10,10 +10,11 @@ describe 'journald' do
 
         context 'with defaults for all parameters' do
           it { should compile.with_all_deps() }
-          it { should contain_class('journald') }
-          it { should contain_class('journald::config') }
-          # it { should contain_class('journald::config').that_notifies("Class['journald::service']") }
           it { should contain_class('journald::service') }
+          it { should contain_service('systemd-journald').with({
+            'ensure' => 'running',
+            'enable' => 'true',
+            }) }
         end
       end
     end
