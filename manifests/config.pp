@@ -1,3 +1,4 @@
+# Configure journald.conf
 class journald::config {
   $merged_options = merge($::journald::params::default_options, $::journald::options)
 
@@ -10,14 +11,14 @@ class journald::config {
   file { '/var/log/journal/':
     ensure => $journald_dir,
     force  => true,
-    owner  => 0,
+    owner  => 'root',
     group  => 'systemd-journal',
   }
 
   file { '/etc/systemd/journald.conf':
     ensure  => 'file',
-    owner   => 0,
-    group   => 0,
+    owner   => 'root',
+    group   => 'root',
     content => template("${module_name}/journald.conf.erb"),
   }
 }
