@@ -1,5 +1,5 @@
 class journald::service {
-  service { ['systemd-journald']:
+  service { 'systemd-journald':
     ensure => running,
     enable => true,
   }
