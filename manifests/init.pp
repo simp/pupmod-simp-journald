@@ -4,12 +4,12 @@
 #
 # === Parameters:
 #
-# $persist_log::                 By default, the journal stores log data in /run/log/journal/. 
-#                                Since /run/ is volatile, log data is lost at reboot. To make the
-#                                data persistent, it is sufficient to create /var/log/journal/ 
-#                                where systemd-journald will then store the data.
+# $persist_log:: By default, the journal stores log data in /run/log/journal/.
+#                Since /run/ is volatile, log data is lost at reboot. To make the
+#                data persistent, it is sufficient to create /var/log/journal/
+#                where systemd-journald will then store the data.
 #
-# $options::                     a hash with journald parameters
+# $options::     a hash with journald parameters
 #
 class journald (
   $persist_log = $journald::params::persist_log,
@@ -19,7 +19,6 @@ class journald (
     contain ::journald::config
     contain ::journald::service
 
-    Class['journald::config'] ~>
-    Class['journald::service']
+    Class['journald::config'] ~> Class['journald::service']
   }
 }
