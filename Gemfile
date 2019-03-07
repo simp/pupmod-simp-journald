@@ -1,35 +1,30 @@
-source 'https://rubygems.org'
+gem_sources = ENV.fetch('GEM_SERVERS','https://rubygems.org').split(/[, ]+/)
 
-gem 'puppet', ENV.key?('PUPPET_VERSION') ? "#{ENV['PUPPET_VERSION']}" : '>= 2.7'
+gem_sources.each { |gem_source| source gem_source }
 
-gem 'rake'
-gem 'rspec'
-gem 'rspec-puppet'
-gem 'rspec-puppet-facts'
-gem 'puppetlabs_spec_helper'
-gem 'puppet-lint'
-gem 'puppet-lint-absolute_classname-check'
-gem 'puppet-lint-absolute_template_path'
-gem 'puppet-lint-classes_and_types_beginning_with_digits-check'
-gem 'puppet-lint-empty_string-check'
-gem 'puppet-lint-file_ensure-check'
-gem 'puppet-lint-leading_zero-check'
-gem 'puppet-lint-numericvariable'
-gem 'puppet-lint-param-docs', '>= 1.3.0'
-gem 'puppet-lint-resource_reference_syntax'
-gem 'puppet-lint-spaceship_operator_without_tag-check'
-gem 'puppet-lint-strict_indent-check'
-gem 'puppet-lint-trailing_comma-check'
-gem 'puppet-lint-undef_in_function-check'
-gem 'puppet-lint-unquoted_string-check'
-gem 'puppet-lint-variable_contains_upcase'
-gem 'puppet-lint-version_comparison-check'
-gem 'simplecov'
-gem 'puppet-blacksmith', '>= 3.1.0', {"groups"=>["development"]}
-gem 'json', '~> 1.0', {"platforms"=>["ruby_19"], "groups"=>["test"]}
-gem 'json_pure', '~> 1.0', {"platforms"=>["ruby_19"], "groups"=>["test"]}
-gem 'metadata-json-lint'
-gem 'webmock', '< 2.0'
-gem 'addressable', '< 2.4', {"platforms"=>["ruby_18"]}
-gem 'oauth'
-gem 'parallel_tests', {"platforms"=>["ruby_20", "ruby_21"]}
+group :test do
+  gem 'rake'
+  gem 'puppet', ENV.fetch('PUPPET_VERSION', '~> 5.5')
+  gem 'rspec'
+  gem 'rspec-puppet'
+  gem 'hiera-puppet-helper'
+  gem 'puppetlabs_spec_helper'
+  gem 'metadata-json-lint'
+  gem 'puppet-strings'
+  gem 'puppet-lint-empty_string-check',   :require => false
+  gem 'puppet-lint-trailing_comma-check', :require => false
+  gem 'simp-rspec-puppet-facts', ENV.fetch('SIMP_RSPEC_PUPPET_FACTS_VERSION', '~> 2.2')
+  gem 'simp-rake-helpers', ENV.fetch('SIMP_RAKE_HELPERS_VERSION', '~> 5.6')
+end
+
+group :development do
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end
+
+group :system_tests do
+  gem 'beaker'
+  gem 'beaker-rspec'
+  gem 'simp-beaker-helpers', ENV.fetch('SIMP_BEAKER_HELPERS_VERSION', '~> 1.12')
+end

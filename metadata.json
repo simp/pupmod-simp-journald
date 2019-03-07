@@ -1,14 +1,23 @@
 {
-	"name": "cristifalcas-journald",
-	"author": "Cristian Falcas",
-	"version": "0.6.1",
-	"source": "git@github.com:cristifalcas/puppet-journald.git",
-	"project_page": "https://github.com/cristifalcas/puppet-journald",
-	"issues_url": "https://github.com/cristifalcas/puppet-journald/issues",
+	"name": "simp-journald",
+	"author": "SIMP Team",
+	"version": "1.0.0",
+  "summary": "Configures journald on el7",
+	"source": "git@github.com:simp/pupmod-simp-journald.git",
+	"project_page": "https://github.com/simp/pupmod-simp-journald",
+	"issues_url": "https://github.com/simp/pupmod-simp-journald/issues",
+  "tags": [
+    "simp",
+    "journald"
+  ],
 	"dependencies": [{
 			"name": "puppetlabs/stdlib",
-			"version_requirement": "4.x"
-		}
+			"version_requirement": ">= 4.19.0 < 6.0.0"
+		},
+    {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">= 2.5.0 < 3.0.0"
+    }
 	],
 	"license": "Apache-2.0",
 	"operatingsystem_support": [{
@@ -23,18 +32,12 @@
 			"operatingsystem": "OracleLinux",
 			"operatingsystemrelease": [ "7"
 			]
-		},{
-			"operatingsystem": "Scientific",
-			"operatingsystemrelease": [ "7"
-			]
-		},{
-			"operatingsystem": "Fedora",
-			"operatingsystemrelease": [ "21"
-			]
 		}
 	],
-	"requirements": [],
-	"summary": "Configures journald on el7",
-	"tags": [ "journald"
-	]
+	"requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.4 < 6.0.0"
+    }
+  ]
 }

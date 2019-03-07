@@ -1,5 +1,5 @@
 # journald
-[![Build Status](https://travis-ci.org/cristifalcas/puppet-journald.png?branch=master)](https://travis-ci.org/cristifalcas/puppet-journald)
+[![Build Status](https://travis-ci.org/simp/pupmod-simp-journald.png?branch=master)](https://travis-ci.org/simp/pupmod-simp-journald)
 
 #### Table of Contents
 
