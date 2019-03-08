@@ -12,8 +12,8 @@ HOSTS:
       - default
       - master
       - client
-    platform: el-6-x86_64
-    box: onyxpoint/oel-6-x86_64
+    platform: el-7-x86_64
+    box: onyxpoint/oel-7-x86_64
     hypervisor: <%= hypervisor %>
 
 CONFIG:
