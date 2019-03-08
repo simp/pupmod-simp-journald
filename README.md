@@ -1,5 +1,8 @@
-# journald
-[![Build Status](https://travis-ci.org/cristifalcas/puppet-journald.png?branch=master)](https://travis-ci.org/cristifalcas/puppet-journald)
+[![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/73/badge)](https://bestpractices.coreinfrastructure.org/projects/73)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/simp/journald.svg)](https://forge.puppetlabs.com/simp/journald)
+[![Puppet Forge Downloads](https://img.shields.io/puppetforge/dt/simp/journald.svg)](https://forge.puppetlabs.com/simp/journald)
+[![Build Status](https://travis-ci.org/simp/pupmod-simp-journald.svg)](https://travis-ci.org/simp/pupmod-simp-journald)
 
 #### Table of Contents
 

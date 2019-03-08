@@ -1,9 +1,6 @@
+# Class: journald::config
+#
 class journald::config {
-  if $::journald::enable_defaults {
-    $merged_options = merge($::journald::params::default_options, $::journald::options)
-  } else {
-    $merged_options = $::journald::options
-  }
 
   if $::journald::persist_log {
     $journald_dir = 'directory'
@@ -24,7 +21,7 @@ class journald::config {
   }
 
   $ini_settings = {
-    'Journal' => $merged_options,
+    'Journal' => $::journald::options,
   }
   create_ini_settings($ini_settings, $defaults)
 }
