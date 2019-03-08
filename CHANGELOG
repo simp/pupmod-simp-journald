@@ -1,5 +1,7 @@
 * Thu Mar 07 2019 Nicholas Markowski <nicholas.markowski@onyxpoint.com> - 1.0.0-0
 - Forked from cristifalcas/puppet-journald
+- Removed default options from API
 - Added SIMP assets
-- Removed default options API
+- Updated Puppet dependency for hiera v5 support
+- Added inifile dependency in metadata, and updated stdlib version dependency
 - Initial release 

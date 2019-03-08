@@ -1,40 +1,47 @@
 {
-	"name": "simp-journald",
-	"author": "SIMP Team",
-	"version": "1.0.0",
+  "name": "simp-journald",
+  "author": "SIMP Team",
+  "version": "1.0.0",
   "summary": "Configures journald on el7",
-	"source": "git@github.com:simp/pupmod-simp-journald.git",
-	"project_page": "https://github.com/simp/pupmod-simp-journald",
-	"issues_url": "https://github.com/simp/pupmod-simp-journald/issues",
+  "source": "git@github.com:simp/pupmod-simp-journald.git",
+  "project_page": "https://github.com/simp/pupmod-simp-journald",
+  "issues_url": "https://github.com/simp/pupmod-simp-journald/issues",
   "tags": [
     "simp",
     "journald"
   ],
-	"dependencies": [{
-			"name": "puppetlabs/stdlib",
-			"version_requirement": ">= 4.19.0 < 6.0.0"
-		},
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.19.0 < 6.0.0"
+    },
     {
       "name": "puppetlabs/inifile",
       "version_requirement": ">= 2.5.0 < 3.0.0"
     }
-	],
-	"license": "Apache-2.0",
-	"operatingsystem_support": [{
-			"operatingsystem": "RedHat",
-			"operatingsystemrelease": [ "7"
-			]
-		},{
-			"operatingsystem": "CentOS",
-			"operatingsystemrelease": [ "7"
-			]
-		},{
-			"operatingsystem": "OracleLinux",
-			"operatingsystemrelease": [ "7"
-			]
-		}
-	],
-	"requirements": [
+  ],
+  "license": "Apache-2.0",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
     {
       "name": "puppet",
       "version_requirement": ">= 4.10.4 < 6.0.0"
