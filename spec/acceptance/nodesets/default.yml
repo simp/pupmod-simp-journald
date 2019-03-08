@@ -12,7 +12,7 @@ HOSTS:
       - default
       - master
       - client
-    platform: el-6-x86_64
+    platform: el-7-x86_64
     box: centos/7
     hypervisor: <%= hypervisor %>
 
