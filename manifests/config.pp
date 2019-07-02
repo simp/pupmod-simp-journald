@@ -1,4 +1,4 @@
-# Class: journald::config
+# @summary Configure the `journald` service
 #
 class journald::config {
 

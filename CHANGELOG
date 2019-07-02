@@ -1,7 +1,13 @@
+* Tue Jul 02 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.1.0-0
+- Updated README.md
+- Added REFERENCE.md
+- Support puppetlabs-stdlib 6
+- Dropped puppet 4 support
+
 * Thu Mar 07 2019 Nicholas Markowski <nicholas.markowski@onyxpoint.com> - 1.0.0-0
 - Forked from cristifalcas/puppet-journald
 - Removed default options from API
 - Added SIMP assets
 - Updated Puppet dependency for hiera v5 support
 - Added inifile dependency in metadata, and updated stdlib version dependency
-- Initial release 
+- Initial release
