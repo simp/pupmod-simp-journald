@@ -1,8 +1,4 @@
-# Class: journald
-#
-# This module manages journald
-#
-# === Parameters:
+# @summary Manage the `journald` daemon
 #
 # @param persist_log
 #  By default, the journal stores log data in /run/log/journal/.

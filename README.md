@@ -6,24 +6,31 @@
 
 #### Table of Contents
 
-1. [Overview](#overview)
-2. [Setup - The basics of getting started with journald](#setup)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with journald](#beginning-with-journald)
-3. [Limitations - OS compatibility, etc.](#limitations)
-4. [Development - Guide for contributing to the module](#development)
+<!-- vim-markdown-toc GFM -->
+
+* [Overview](#overview)
+* [Setup](#setup)
+  * [Beginning with journald](#beginning-with-journald)
+* [Usage](#usage)
+* [Limitations](#limitations)
+* [Development](#development)
+
+<!-- vim-markdown-toc -->
 
 ## Overview
 
-systemd-journald is a system service that collects and stores logging data. 
-It creates and maintains structured, indexed journals based on logging information 
+`systemd-journald` is a system service that collects and stores logging data.
+
+It creates and maintains structured, indexed journals based on logging information
 that is received from a variety of sources:
 
-* Kernel log messages, via kmsg
-* Simple system log messages, via the libc syslog(3) call
-* Structured system log messages via the native Journal API, see sd_journal_print(4)
+* Kernel log messages, via `kmsg`
+* Simple system log messages, via the `libc` `syslog(3)` call
+* Structured system log messages via the native Journal API, see `sd_journal_print(4)`
 * Standard output and standard error of system services
 * Audit records, via the audit subsystem
+
+See [REFERENCE.md](REFERENCE.md) for more details.
 
 ## Setup
 
@@ -34,17 +41,17 @@ that is received from a variety of sources:
 ## Usage
 
     class {'journald': options => {
-	    'Compress'          => 'yes',
-	    'ForwardToSyslog'   => 'yes',
-	    'ForwardToKMsg'     => 'yes',
-	    'ForwardToConsole'  => 'no',
-	    'TTYPath'           => '/dev/console',
-	  }
+        'Compress'         => 'yes',
+        'ForwardToSyslog'  => 'yes',
+        'ForwardToKMsg'    => 'yes',
+        'ForwardToConsole' => 'no',
+        'TTYPath'          => '/dev/console',
+      }
     }
 
 ## Limitations
 
-This module is only appicable on EL7 machines
+This module is only appicable on systems that run `journald`
 
 ## Development
 

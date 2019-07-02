@@ -1,4 +1,4 @@
-# Class: journald::service
+# @summary Manage the `journald` service
 #
 class journald::service {
 
