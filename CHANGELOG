@@ -1,3 +1,6 @@
+* Mon Aug 05 2019 Robert Vincent <pillarsdotnet@gmail.com> - 1.1.1-0
+- Allow puppetlabs/inifile 3.x
+
 * Tue Jul 02 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.1.0-0
 - Updated README.md
 - Added REFERENCE.md
