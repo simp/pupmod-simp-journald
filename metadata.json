@@ -1,8 +1,8 @@
 {
   "name": "simp-journald",
   "author": "SIMP Team",
-  "version": "1.1.1",
-  "summary": "Configures journald on el7",
+  "version": "1.2.0",
+  "summary": "Configures journald",
   "source": "git@github.com:simp/pupmod-simp-journald.git",
   "project_page": "https://github.com/simp/pupmod-simp-journald",
   "issues_url": "https://github.com/simp/pupmod-simp-journald/issues",
@@ -25,19 +25,22 @@
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "7"
+        "7",
+        "8"
       ]
     },
     {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
-        "7"
+        "7",
+        "8"
       ]
     },
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
-        "7"
+        "7",
+        "8"
       ]
     }
   ],
